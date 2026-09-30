@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>中文 Flashcards</h1>
+        <p>Карточки для изучения китайского</p>
+    </header>
+
+    <section class="toolbar">
+        <label class="file-button">
+            📂 Загрузить CSV
+            <input type="file" id="csvFile" accept=".csv">
+        </label>
+
+        <button id="shuffleBtn">🔀 Перемешать</button>
+
+        <button id="resetBtn">↻ Сбросить прогресс</button>
+    </section>
+
+    <section class="stats">
+        <span>Карточка: <b id="currentNumber">0</b> / <b id="totalNumber">0</b></span>
+        <span>Знаю: <b id="knownCount">0</b></span>
+        <span>Не знаю: <b id="unknownCount">0</b></span>
+    </section>
+
+    <main>
+
+        <div id="emptyState" class="empty-state">
+            <h2>Загрузи CSV</h2>
+            <p>
+                Выбери CSV-файл со словами, чтобы начать обучение.
+            </p>
+        </div>
+
+        <div id="card" class="card hidden">
+
+            <div class="card-front">
+
+                <div class="label">КИТАЙСКИЙ</div>
+
+                <div id="chinese" class="chinese">
+                    学习
+                </div>
+
+                <button id="speakBtn" class="speak-button">
+                    🔊 Произнести
+                </button>
+
+            </div>
+
+            <div id="answer" class="answer hidden">
+
+                <div class="divider"></div>
+
+                <div class="label">PINYIN</div>
+                <div id="pinyin" class="pinyin"></div>
+
+                <div class="label">ПЕРЕВОД</div>
+                <div id="russian" class="russian"></div>
+
+                <div id="exampleContainer">
+                    <div class="label">ПРИМЕР</div>
+                    <div id="example" class="example"></div>
+                </div>
+
+            </div>
+
+            <button id="showAnswerBtn" class="show-answer">
+                Показать ответ
+            </button>
+
+        </div>
+
+        <div id="buttons" class="answer-buttons hidden">
+            <button id="unknownBtn" class="unknown">
+                ✕ Не знаю
+            </button>
+
+            <button id="knownBtn" class="known">
+                ✓ Знаю
+            </button>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
